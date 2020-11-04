@@ -13,3 +13,38 @@
 Для каждого из классов метод должен выводить уникальное сообщение.
 Создать экземпляры классов и проверить, что выведет описанный метод для каждого экземпляра.
 """
+
+
+class Stationery:
+    title = None
+
+    @staticmethod
+    def draw():
+        print(f"Запуск отрисовки")
+
+
+class Pen:
+
+    @staticmethod
+    def draw():
+        print(f"Запуск отрисовки в классе Pen")
+
+
+class Pencil:
+
+    @staticmethod
+    def draw():
+        print(f"Запуск отрисовки в классе Pencil")
+
+
+class Handle:
+
+    @staticmethod
+    def draw():
+        print(f"Запуск отрисовки в классе Handle")
+
+
+stationery_list = [Pen(), Pencil(), Handle()]
+
+for next_stationery in stationery_list:
+    next_stationery.draw()
