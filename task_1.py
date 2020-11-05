@@ -20,22 +20,15 @@ from time import sleep
 
 
 class TrafficLight:
-    __color = None
+    __color = [{'color': 'Красный', 'duration': 7}, {'color': 'Желтый', 'duration': 2},
+               {'color': 'Зеленый', 'duration': 10}]
 
-    def running(self):
-        self.__color = 'red'
-        print(self.__color)
-        sleep(7)
-
-        self.__color = 'yellow'
-        print(self.__color)
-        sleep(2)
-
-        self.__color = 'green'
-        print(self.__color)
-        sleep(2)
+    @staticmethod
+    def running():
+        for i in range(0, len(TrafficLight.__color)):
+            print(TrafficLight.__color[i]['color'])
+            sleep(TrafficLight.__color[i]['duration'])
 
 
 traffic_light = TrafficLight()
 traffic_light.running()
-

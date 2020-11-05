@@ -16,35 +16,34 @@
 
 
 class Stationery:
-    title = None
+
+    def __init__(self, title):
+        self.title = title
 
     @staticmethod
     def draw():
         print(f"Запуск отрисовки")
 
 
-class Pen:
+class Pen(Stationery):
 
-    @staticmethod
-    def draw():
-        print(f"Запуск отрисовки в классе Pen")
-
-
-class Pencil:
-
-    @staticmethod
-    def draw():
-        print(f"Запуск отрисовки в классе Pencil")
+    def draw(self):
+        print(f"Запуск отрисовки в классе Pen с заголовком: {self.title}")
 
 
-class Handle:
+class Pencil(Stationery):
 
-    @staticmethod
-    def draw():
-        print(f"Запуск отрисовки в классе Handle")
+    def draw(self):
+        print(f"Запуск отрисовки в классе Pencil с заголовком: {self.title}")
 
 
-stationery_list = [Pen(), Pencil(), Handle()]
+class Handle(Stationery):
+
+    def draw(self):
+        print(f"Запуск отрисовки в классе Handle с заголовком: {self.title}")
+
+
+stationery_list = [Pen('Ручка'), Pencil('Карандаш'), Handle('Маркер')]
 
 for next_stationery in stationery_list:
     next_stationery.draw()

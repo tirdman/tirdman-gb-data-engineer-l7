@@ -19,12 +19,12 @@ length (длина в метрах), width (ширина в метрах).
 
 
 class Road:
-    weight_square_meter = None
-    thickness = None
 
     def __init__(self, length, width):
         self._length = length
         self._width = width
+        self.weight_square_meter = None
+        self.thickness = None
 
     def calc_weight(self):
         if not self.weight_square_meter or not self.thickness:
@@ -34,7 +34,7 @@ class Road:
 
 
 road = Road(5000, 20)
-road.calc_weight()
+# road.calc_weight()
 
 road.weight_square_meter = 25
 road.thickness = 0.05
